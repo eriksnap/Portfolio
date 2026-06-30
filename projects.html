@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Erik Machowski | Projects</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 fixed-top">
+            <a class="navbar-brand" href="index.html">ERIK PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <span id="xp-display" class="text-light ms-3">Level 1 | XP 0/100</span>
+            </div>
+        </nav>
+
+        <section class="container py-5">
+            <h1>Projects</h1>
+
+            <!-- TABS -->
+            <ul class="nav nav-tabs mt-3" id="projectTabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#games">Games</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#code">Code</button>
+                </li>
+            </ul>
+
+            <div class="tab-content mt-0">
+
+                <!-- GAMES TAB -->
+                <div class="tab-pane fade show active" id="games">
+
+                    <!-- Rewired -->
+                    <div class="card mb-4">
+                        <img src="rewired_cover.png" class="card-img-top" alt="Rewired">
+                        <div class="card-body">
+                            <h5 class="card-title">Rewired</h5>
+                            <p class="card-text">
+                                A 3D experimental puzzle game built around the concept of control disruption.
+                                Each room the player completes changes their physical control layout. WASD
+                                might become inverted, rotated, or mouse driven, forcing them to constantly
+                                re-learn how to interact with the game world. The goal is to complete puzzles
+                                and progress through all rooms despite the shifting controls.
+                            </p>
+                            <p><strong>Role:</strong> Sole Programmer</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">Unity 6</span>
+                                <span class="badge bg-secondary me-1">C#</span>
+                                <span class="badge bg-secondary me-1">ProBuilder</span>
+                                <span class="badge bg-secondary me-1">Cinemachine</span>
+                            </div>
+                            <span class="text-muted small">itch.io page coming soon</span>
+                        </div>
+                    </div>
+
+                    <!-- Flashfire -->
+                    <div class="card mb-4">
+                        <img src="flashfire_title.png" class="card-img-top" alt="Flashfire title screen">
+                        <div class="card-body">
+                            <h5 class="card-title">Flashfire</h5>
+                            <p class="card-text">
+                                A 2D puzzle platformer where you play as a fireball with a unique teleport mechanic.
+                                Rather than traditional movement, you drag and click to launch your character across
+                                the level. Collect keys to unlock doors and reach the exit to complete each stage.
+                            </p>
+                            <p><strong>Role:</strong> Developer</p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">Unity 6</span>
+                                <span class="badge bg-secondary me-1">C#</span>
+                            </div>
+
+                            <!-- Flashfire screenshots - clickable -->
+                            <div class="row g-2 mb-3">
+                                <div class="col-md-6">
+                                    <img src="flashfire_gameplay.png"
+                                         class="img-fluid rounded screenshot-thumb"
+                                         alt="Flashfire drag to teleport mechanic"
+                                         onclick="gainXPOnce('viewed_screenshot', 10)" data-bs-toggle="modal"
+                                         data-bs-target="#imgModal"
+                                         data-img="flashfire_gameplay.png"
+                                         data-caption="Drag to teleport mechanic with trajectory preview">
+                                    <p class="text-muted small mt-1">Drag to teleport mechanic</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="flashfire_level.png"
+                                         class="img-fluid rounded screenshot-thumb"
+                                         alt="Flashfire in-level gameplay"
+                                         onclick="gainXPOnce('viewed_screenshot', 10)" data-bs-toggle="modal"
+                                         data-bs-target="#imgModal"
+                                         data-img="flashfire_level.png"
+                                         data-caption="In-level gameplay with platform navigation">
+                                    <p class="text-muted small mt-1">In-level gameplay</p>
+                                </div>
+                            </div>
+
+                            <a href="https://snappyli.itch.io/flashfire" class="btn btn-dark" target="_blank" onclick="gainXPOnce('opened_itch', 15)">Play on itch.io</a>
+                        </div>
+                    </div>
+
+                </div><!-- /games tab -->
+
+                <!-- CODE TAB -->
+                <div class="tab-pane fade" id="code">
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Portfolio XP System</h5>
+                            <p class="card-text">
+                                A lightweight JavaScript XP and levelling system built for this portfolio site.
+                                Gaining XP updates a persistent display in the navbar. When XP reaches 100 the
+                                player levels up and XP resets, mimicking a basic game progression loop.
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">JavaScript</span>
+                                <span class="badge bg-secondary me-1">HTML</span>
+                                <span class="badge bg-secondary me-1">Bootstrap 5</span>
+                            </div>
+                            <span class="text-muted small d-block mb-3">Built as part of this portfolio</span>
+
+                            <img src="code_xp_system.png"
+                                 class="img-fluid rounded screenshot-thumb"
+                                 alt="Portfolio XP system code"
+                                 onclick="gainXPOnce('viewed_code_xp', 10)"
+                                 data-bs-toggle="modal"
+                                 data-bs-target="#imgModal"
+                                 data-img="code_xp_system.png"
+                                 data-caption="main.js: handles XP gain, level up checks, once-off action tracking via localStorage, and updating the navbar display.">
+                            <p class="text-muted small mt-1">
+                                Core XP logic from main.js. Uses localStorage so progress persists across pages,
+                                and a grantOnce/gainXPOnce pattern so actions like visiting a page or clicking a
+                                link only reward XP a single time.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Rewired Control Scheme System</h5>
+                            <p class="card-text">
+                                The core system powering Rewired. Built using a C# interface
+                                called IControlScheme with four concrete implementations: Standard,
+                                Inverted, Mouse Drive, and Rotated. A singleton manager swaps schemes
+                                between rooms, and trigger zones handle the transitions automatically.
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-secondary me-1">C#</span>
+                                <span class="badge bg-secondary me-1">Unity 6</span>
+                                <span class="badge bg-secondary me-1">Interface Pattern</span>
+                                <span class="badge bg-secondary me-1">Singleton</span>
+                            </div>
+
+                            <div class="row g-2 mb-2">
+                                <div class="col-md-6">
+                                    <img src="code_icontrolscheme.png"
+                                         class="img-fluid rounded screenshot-thumb"
+                                         alt="IControlScheme interface code"
+                                         onclick="gainXPOnce('viewed_code_interface', 10)"
+                                         data-bs-toggle="modal"
+                                         data-bs-target="#imgModal"
+                                         data-img="code_icontrolscheme.png"
+                                         data-caption="IControlScheme.cs: the shared interface every control scheme must implement.">
+                                    <p class="text-muted small mt-1">
+                                        The IControlScheme interface. Every control scheme implements the same
+                                        three methods, so the rest of the game can read input without knowing
+                                        which scheme is active.
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="code_wasdscheme.png"
+                                         class="img-fluid rounded screenshot-thumb"
+                                         alt="WASDScheme implementation code"
+                                         onclick="gainXPOnce('viewed_code_wasd', 10)"
+                                         data-bs-toggle="modal"
+                                         data-bs-target="#imgModal"
+                                         data-img="code_wasdscheme.png"
+                                         data-caption="WASDScheme.cs: the standard control scheme, one of four classes that implement IControlScheme.">
+                                    <p class="text-muted small mt-1">
+                                        WASDScheme, the standard control implementation of IControlScheme,
+                                        showing how movement, jump, and crouch input are read for this scheme.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /code tab -->
+
+            </div><!-- /tab-content -->
+        </section>
+
+        <!-- IMAGE MODAL -->
+        <div class="modal fade" id="imgModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content bg-dark">
+                    <div class="modal-header border-secondary">
+                        <p id="modal-caption" class="text-muted small mb-0"></p>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-2">
+                        <img id="modal-img" src="" alt="" class="img-fluid w-100 rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            //Populate modal with clicked screenshot
+            var imgModal = document.getElementById('imgModal');
+            imgModal.addEventListener('show.bs.modal', function(e) {
+                var trigger = e.relatedTarget;
+                document.getElementById('modal-img').src = trigger.dataset.img;
+                document.getElementById('modal-img').alt = trigger.dataset.caption;
+                document.getElementById('modal-caption').textContent = trigger.dataset.caption;
+            });
+        </script>
+    </body>
+</html>
